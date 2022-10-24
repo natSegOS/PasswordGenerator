@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Set text encoding in meta data -->
+    <meta charset="UTF-8">
+
+    <!-- Set title of document-->
+    <title>Password Generator</title>
+
+    <!-- Load resources -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+<div id="content" class="content">
+    <header id="header" class="header">Password Generator</header>
+    <br><br>
+
+    <div id="copy-password-tooltip" class="tooltip">
+        <span id="copy-password-tooltip-text" class="tooltip-text">Copy</span>
+        <div id="password-section" class="password-section">
+            <label for="password-text-box"></label>
+            <input type="text" id="password-text-box" class="password-text-box" placeholder="Generated Password" size="50" disabled>
+            <button id="password-copy-button" class="copy-button">
+                <img id="password-copy-button-image" class="icon" src="../images/copy-text-icon.png" alt="Copy Text Icon">
+            </button>
+        </div>
+    </div>
+    <div id="password-misc" class="password-misc-section">
+        <div id="password-content-modifier-section" class="password-content-modifier-section">
+            <button id="hide-or-show-password-button" class="password-content-modifier-button">Hide</button>
+            <button id="clear-password-button" class="password-content-modifier-button">Clear</button>
+        </div>
+        <div id="password-strength-section" class="password-strength-section">
+            <label for="password-strength" id="password-strength-label" class="password-strength-label">Strength:&nbsp</label>
+            <label for="password-text-box" id="password-strength" class="password-strength">Undetermined</label>
+        </div>
+    </div>
+    <br><br>
+
+    <div id="password-preferences-section" class="password-preferences-section">
+        <div id="password-length-slider-container" class="slider-container">
+            <label for="password-length-slider" id="password-length-slider-label" class="header-label"><strong>Password Length</strong></label>
+            <br>
+
+            <label for="password-length-slider-value"></label>
+            <input type="number" id="password-length-slider-value" class="password-length-slider-value" maxlength="2" pattern="[0-9]+" max="30" min="1">
+            <br>
+            <input type="range" min="1" max="30" value="15" class="password-length-slider" id="password-length-slider">
+        </div>
+        <br><br>
+
+        <label for="preference-container" id="checkbox-container-label" class="header-label"><strong>Preferences</strong></label>
+        <br>
+        <div id="preference-container" class="preference-container">
+            <div id="lowercase-checkbox-container" class="preference">
+                <input type="checkbox" id="lowercase-checkbox" class="preference-checkbox" name="preferences" checked>
+                <label for="lowercase-checkbox" class="preference-label">Lowercase Letters (abc)</label>
+            </div>
+            <br>
+
+            <div id="uppercase-checkbox-container" class="preference">
+                <input type="checkbox" id="uppercase-checkbox" class="preference-checkbox" name="preferences" checked>
+                <label for="uppercase-checkbox" class="preference-label">Uppercase Letters (ABC)</label>
+            </div>
+            <br>
+
+            <div id="number-checkbox-container" class="preference">
+                <input type="checkbox" id="number-checkbox" class="preference-checkbox" name="preferences" checked>
+                <label for="number-checkbox" class="preference-label">Numbers (123)</label>
+            </div>
+            <br>
+
+            <div id="symbol-checkbox-container" class="preference">
+                <input type="checkbox" id="symbol-checkbox" class="preference-checkbox" name="preferences" checked>
+                <label for="symbol-checkbox" class="preference-label">Symbols ($&^)</label>
+            </div>
+        </div>
+        <br><br>
+
+        <div id="generate-password-section" class="generate-password-section">
+            <button id="generate-password-button" class="generate-password-button">
+                Generate
+                <img id="generate-password-image" class="icon" src="../images/generate-password-icon.png" alt="Generate Password Icon">
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,406 @@
+:root {
+    --checkbox-size: 16px;
+    --check-box-passive-color: #ccc;
+    --checkbox-hover-color: cornflowerblue;
+    --check-box-selected-color: cornflowerblue;
+    --generate-password-button-passive-color: #989ade;
+}
+
+body {
+    font-family: "Helvetica Neue", sans-serif;
+    color: black;
+    font-size: 1rem;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    font-size: 2rem;
+    color: cornflowerblue;
+    font-family: monospace;
+    background-color: #eceff1;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 100px;
+    padding: 25px;
+}
+
+.header-label {
+    font-size: 1.25rem;
+    color: #555555;
+    border-color: black;
+    border-width: thin;
+    border-bottom-style: solid;
+}
+
+.password-section {
+    display: flex;
+    flex-direction: row;
+    border-color: black;
+    border-style: solid;
+    border-radius: 0.75rem;
+    opacity: 0.7;
+    width: 100vm;
+}
+
+.password-section:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.password-text-box {
+    flex-grow: 2;
+    font-size: 2rem;
+    text-align: center;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+.password-text-box:focus {
+    outline: none;
+}
+
+.copy-button {
+    background: none;
+    border: none;
+}
+
+.copy-button:hover {
+    cursor: pointer;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px none black;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 140px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 1rem;
+    left: 105%;
+    margin-left: -2.5rem;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.tooltip .tooltip-text::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #555 transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.password-misc-section {
+    display: flex;
+    flex-direction: row;
+    width: 73vw;
+    align-self: center;
+    justify-content: space-between;
+}
+
+.password-content-modifier-section {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    justify-content: space-between;
+    width: 15%;
+}
+
+.password-content-modifier-button {
+    background-color: mediumslateblue;
+    border-style: solid;
+    border-color: black;
+    border-radius: 1rem;
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+    opacity: 0.7;
+    padding-top: 5px;
+    width: 48%;
+}
+
+.password-content-modifier-button:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.password-strength-section {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    align-content: flex-end;
+}
+
+.password-strength {
+    font-weight: bold;
+}
+
+.password-preferences-section {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+
+.slider-container {
+    width: 90vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#password-length-slider-value {
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 1rem;
+    position: relative;
+    width: 10%;
+    background-color: cornflowerblue;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    border-color: transparent;
+    border-style: solid;
+    border-radius: 5px;
+    -moz-appearance: textfield;
+}
+
+#password-length-slider-value::-webkit-outer-spin-button,
+#password-length-slider-value::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#password-length-slider-value:focus {
+    outline: none;
+}
+
+#password-length-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    border-radius: 2.25rem;
+    height: 15px;
+    width: 80%;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.password-length-slider::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    height: 8px;
+}
+
+.password-length-slider::-moz-range-track {
+    -moz-appearance: none;
+    height: 8px;
+}
+
+.password-length-slider::-ms-track {
+    appearance: none;
+    height: 8px;
+}
+
+.password-length-slider:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.password-length-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    margin-top: -8px;
+    border-radius: 50%;
+    background: cornflowerblue;
+    cursor: pointer;
+}
+
+.password-length-slider::-moz-range-thumb {
+    -moz-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    margin-top: -8px;
+    border-radius: 50%;
+    background: cornflowerblue;
+    cursor: pointer;
+}
+
+.password-length-slider::-ms-thumb {
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    margin-top: -8px;
+    border-radius: 50%;
+    background: cornflowerblue;
+    cursor: pointer;
+}
+
+.password-length-slider:active::-webkit-slider-thumb {
+    background-color: #fff;
+    border: 3px solid cornflowerblue;
+}
+
+.preference-container {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 400px;
+}
+
+.preference {
+    display: flex;
+    flex-direction: row;
+}
+
+.preference-label {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.preference-label:hover {
+    cursor: pointer;
+}
+
+.preference-checkbox {
+    position: relative !important;
+    appearance: none;
+    box-sizing: content-box;
+    overflow: hidden;
+}
+
+.preference-checkbox:hover {
+    border-color: var(--checkbox-hover-color);
+    cursor: pointer;
+}
+
+.preference-checkbox::before {
+    content: "";
+    display: inline-block;
+    box-sizing: content-box;
+    width: var(--checkbox-size);
+    height: var(--checkbox-size);
+    border: 2px solid var(--check-box-passive-color);
+    transition: 0.2s border-color ease;
+    border-radius: var(--checkbox-size);
+}
+
+.preference-checkbox:checked::before {
+    border-color: var(--check-box-selected-color);
+    transition: 0.5s border-color ease;
+}
+
+.preference-checkbox:disabled::before {
+    border-color: var(--check-box-passive-color);
+    background-color: var(--check-box-passive-color);
+}
+
+.preference-checkbox::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    box-sizing: content-box;
+    top: 50%;
+    left: 50%;
+    transform-origin: 50% 50%;
+    background-color: var(--check-box-selected-color);
+    width: var(--checkbox-size);
+    height: var(--checkbox-size);
+    border-radius: 100vw;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.preference-checkbox::before {
+    border-radius: calc(var(--checkbox-size) / 4);
+}
+
+.preference-checkbox::after {
+    width: calc(var(--checkbox-size) * 0.6);
+    height: var(--checkbox-size);
+    border-radius: 0;
+    transform: translate(-50%, -85%) scale(0) rotate(45deg);
+    background-color: transparent;
+    box-shadow: 4px 4px 0 0 var(--check-box-selected-color);
+}
+
+.preference-checkbox:checked::after {
+    animation: toggleOnCheckbox 0.2s ease forwards;
+}
+
+@keyframes toggleOnCheckbox {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -85%) scale(0) rotate(45deg);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translate(-50%, -85%) scale(0.9) rotate(45deg);
+    }
+
+    100% {
+        transform: translate(-50%, -85%) scale(0.8) rotate(45deg);
+    }
+}
+
+.generate-password-section {
+    background-color: dodgerblue;
+    border-color: black;
+    border-style: solid;
+    border-radius: 0.75rem;
+    opacity: 0.7;
+    width: 30vw;
+}
+
+.generate-password-section:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.generate-password-button {
+    background: none;
+    border: none;
+    flex-grow: 2;
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+    color: white;
+    padding-top: 5px;
+}
+
+.generate-password-button:hover {
+    cursor: pointer;
+}
+
+#generate-password-image {
+    align-self: center;
+    vertical-align: middle;
+    filter: invert(1);
+}
