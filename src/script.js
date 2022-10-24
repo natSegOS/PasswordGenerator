@@ -42,11 +42,15 @@ let PasswordAttributes = {
 let hiddenPassword = "";
 
 function copyPassword() {
-    if (passwordTextBox.value.length > 0) {
+    if (hiddenPassword.length > 0) {
+        navigator.clipboard.writeText(hiddenPassword).then(_ => console.log("Copied password to clipboard"));
+        return;
+    } else if (passwordTextBox.value.length > 0) {
         navigator.clipboard.writeText(passwordTextBox.value).then(_ => console.log("Copied password to clipboard"));
-    } else {
-        alert("No Text to Copy");
+        return;
     }
+
+    alert("No Text to Copy");
 }
 
 function getBooleanPasswordAttributes() {
